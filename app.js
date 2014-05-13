@@ -15,7 +15,7 @@ app.get('/', function(req, res) {
 
 var port = process.env.PORT || 3000;
 var server = app.listen(port, function() {
-    console.log('runnning on port ' + port);
+    console.log('running on port ' + port);
 });
 
 var io = socketIO.listen(server);
@@ -31,17 +31,3 @@ io.sockets.on('connection', function(socket) {
         console.log('disconnect');
     });
 });
-
-// var webSocketServer = new WebSocketServer({httpServer: server});
-
-// webSocketServer.on('request', function(req) {
-//     var websocket = req.accept(null, req.origin);
-//     websocket.on('message', function(msg) {
-// 	    var data = JSON.parse(msg.utf8Data);
-// 		console.log('a:' + data.a + ', b:' + data.b + ', g:' + data.g);
-//     });
-
-//     websocket.on('close', function(code, desc) {
-// 		console.log('connection released! : ' + code + ' - ' + desc);
-//     });
-// });
