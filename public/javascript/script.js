@@ -20,5 +20,5 @@ window.addEventListener("deviceorientation", function(e) {
 
     // send message
     var sendData = {a: a, b: b, g: g};
-    socket.emit('message', {value: data});
+    socket.emit('message', {value: sendData});
 }, false);
